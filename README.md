@@ -1,6 +1,46 @@
 # joke_app_riverpod_statenotifier_freezed
 
-A new Flutter project.
+## アプリの概要
+[Jokes API](https://v2.jokeapi.dev/) を使用し、プログラミング関連のジョークを画面に表示するアプリ。
+
+## Packages
+```
+flutter_riverpod: ^1.0.4
+equatable: ^2.0.3
+dio: ^4.0.6
+freezed_annotation: ^2.1.0
+freezed: ^2.1.0+1
+json_serializable: ^6.3.1
+build_runner: ^2.2.0
+```
+## アプリを作る流れ
+
+### ➀ Modelの実装
+Jokes API から返ってくるレスポンスのフォーマット：
+```
+{
+    "error": false,
+    "category": "Programming",
+    "type": "single",
+    "joke": "If Bill Gates had a dime for every time Windows crashed ... Oh wait, he does.",
+    "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+    },
+    "id": 22,
+    "safe": true,
+    "lang": "en"
+}
+```
+これを参考にAPIから返ってくるobjectを表すモデルを作成。
+
+今回はモデルを２つ作成。Jokeが持つFlags用のモデル（FlagsModel）とjoke自身のモデル（JokesModel）。
+
+equatableとjson_serializableのパッケージを使用してfromJson()とtoJson()のメソッドを作成。
 
 ## Getting Started
 
