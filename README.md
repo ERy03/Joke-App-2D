@@ -4,7 +4,7 @@
 [Jokes API](https://v2.jokeapi.dev/) を使用し、プログラミング関連のジョークを画面に表示するアプリ。
 
 ## Packages
-```
+```dart
 flutter_riverpod: ^1.0.4
 equatable: ^2.0.3
 dio: ^4.0.6
@@ -17,7 +17,7 @@ build_runner: ^2.2.0
 
 ### ➀ Modelの実装
 Jokes API から返ってくるレスポンスのフォーマット：
-```
+```dart
 {
     "error": false,
     "category": "Programming",
@@ -41,6 +41,20 @@ Jokes API から返ってくるレスポンスのフォーマット：
 今回はモデルを２つ作成。Jokeが持つFlags用のモデル（FlagsModel）とjoke自身のモデル（JokesModel）。
 
 equatableとjson_serializableのパッケージを使用してfromJson()とtoJson()のメソッドを作成。
+
+json_serializableでコード生成する必要があるので下記のコマンドを実行
+
+```dart
+flutter pub run build_runner build
+```
+### ➁ Repositoryの実装
+Repositoryには `JokeRepository` interfaceと `JokeRepositoryImpl` と名付けたimplementationがある。
+下記のメソッドを含む:
+```dart
+Future<JokeModel> getJoke();
+// APIに新しいジョークを取得させるメソッド
+// APIからのレスポンスがsuccessfulの場合にジョークを返し、それ以外の場合はExceptionを吐き出す。
+```
 
 ## Getting Started
 
