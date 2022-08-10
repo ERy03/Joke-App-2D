@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import './flags_model.dart';
 
-part 'joke_model.g.dart';
+part 'jokes_model.g.dart';
 
 @JsonSerializable()
 class JokeModel extends Equatable {
