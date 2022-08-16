@@ -4,6 +4,7 @@ import 'package:joke_app_riverpod_statenotifier_freezed/model/jokes_model.dart';
 part 'jokes_state.freezed.dart';
 
 ///Extension Method for easy comparison
+// TODO extensionとは何か？extendsとどう違う？
 extension JokesGetters on JokesState {
   bool get isLoading => this is _JokesStateLoading;
 }

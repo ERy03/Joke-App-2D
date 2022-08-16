@@ -56,6 +56,8 @@ Future<JokeModel> getJoke();
 // APIからのレスポンスがsuccessfulの場合にジョークを返し、それ以外の場合はExceptionを吐き出す。
 ```
 
+### ➂ Repositoryの実装
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
